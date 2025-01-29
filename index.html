@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stylish Poster Shop - 5D Experience</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Font Awesome Icons (used for benefits / testimonials) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrQd2ylQzSgX/j4h7uX1q4VxL9Yr56lY8HhGgdLcgdw8+QHZpN5r27bnHZakQxjgB+xwz0U4XkpZ5Yj8Xg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    /*******************************************
+     ************* GLOBAL RESET ****************
+     *******************************************/
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: #333;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /*******************************************
+     ***** ANIMATED BACKGROUND (5D FEEL) *******
+     *******************************************/
+    /* A multi-stop gradient that smoothly shifts colors over time */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        270deg,
+        #ff5733,
+        #ffc300,
+        #daf7a6,
+        #c70039,
+        #900c3f
+      );
+      background-size: 1200% 1200%;
+      z-index: -1;
+      animation: gradientAnimation 40s ease infinite;
+    }
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /*******************************************
+     ************** TOP PROMO BAR **************
+     *******************************************/
+    .top-bar {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-weight: 600;
+      font-size: 1em;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 10;
+    }
+    .top-bar span {
+      display: inline-block;
+      animation: flashText 2s infinite;
+    }
+    @keyframes flashText {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.4;
+      }
+    }
+
+    /*******************************************
+     *************** HEADER & LOGO *************
+     *******************************************/
+    header {
+      background-color: #111;
+      padding: 20px 0;
+      text-align: center;
+      z-index: 20;
+      position: relative;
+    }
+    header img {
+      width: 180px;
+    }
+
+    /*******************************************
+     *************** HERO SECTION **************
+     *******************************************/
+    .hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      z-index: 1;
+      /* Parallax effect */
+      background: url("https://www.bucco.us/wp-content/uploads/2020/10/Fit-Formals.jpg")
+        no-repeat center center;
+      background-attachment: fixed;
+      background-size: cover;
+      overflow: hidden;
+    }
+    /* Optional translucent overlay for extra dimension */
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        rgba(233, 30, 99, 0.4),
+        rgba(0, 0, 0, 0.6)
+      );
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    .hero-content h1 {
+      font-size: 3em;
+      margin-bottom: 15px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .hero-content p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    .hero-content .shop-button {
+      padding: 15px 30px;
+      background-color: #fff;
+      color: #e91e63;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background-color 0.3s, transform 0.3s;
+      font-weight: 600;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+    .hero-content .shop-button:hover {
+      background-color: #ffeff5;
+      transform: scale(1.05);
+    }
+
+    /*******************************************
+     ****** WHY SHOP WITH US (BENEFITS) ********
+     *******************************************/
+    .why-shop {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px 20px;
+      text-align: center;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .why-shop h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2em;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+      color: #e91e63;
+    }
+    .why-shop h2::after {
+      content: "";
+      display: block;
+      width: 80%;
+      height: 3px;
+      background-color: #e91e63;
+      margin: 10px auto 0;
+    }
+    .why-shop .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 40px;
+    }
+    .benefit-item {
+      width: 200px;
+      text-align: center;
+      transform: translateZ(0); /* fixes some 3D transform issues */
+    }
+    .benefit-item i {
+      font-size: 2.5em;
+      color: #e91e63;
+      margin-bottom: 10px;
+      transition: transform 0.4s;
+    }
+    .benefit-item:hover i {
+      transform: scale(1.2) rotate(15deg);
+    }
+    .benefit-item p {
+      font-size: 1em;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /*******************************************
+     *********** PRODUCTS SECTION **************
+     *******************************************/
+    .container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .container h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5em;
+      font-family: "Montserrat", sans-serif;
+      color: #e91e63;
+      position: relative;
+      display: inline-block;
+    }
+    .container h2::after {
+      content: "";
+      display: block;
+      width: 80%;
+      height: 3px;
+      background-color: #e91e63;
+      margin: 10px auto 0;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      perspective: 1200px; /* for 3D card effect */
+    }
+    .product {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 300px;
+      position: relative;
+      transition: transform 0.7s, box-shadow 0.3s;
+      transform-style: preserve-3d; /* 3D effect */
+    }
+    .product:hover {
+      transform: rotateY(8deg) translateY(-10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+    .product img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+    .discount-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: #e91e63;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      font-weight: bold;
+      z-index: 2;
+    }
+    .product-details {
+      padding: 20px;
+      text-align: center;
+      background: #fff;
+      backface-visibility: hidden; /* for 3D flipping if needed */
+    }
+    .product-details h3 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+      color: #333;
+      font-family: "Montserrat", sans-serif;
+    }
+    .product-details p {
+      font-size: 1em;
+      color: #666;
+      margin-bottom: 15px;
+      min-height: 60px;
+    }
+    .price {
+      font-size: 1.3em;
+      color: #e91e63;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .original-price {
+      font-size: 1em;
+      color: #999;
+      text-decoration: line-through;
+      margin-bottom: 10px;
+    }
+    .buy-button {
+      padding: 12px 25px;
+      background-color: #e91e63;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background-color 0.3s, transform 0.3s;
+      font-weight: 600;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    }
+    .buy-button:hover {
+      background-color: #c2185b;
+      transform: scale(1.05);
+    }
+
+    /*******************************************
+     ************ TESTIMONIALS SECTION *********
+     *******************************************/
+    .testimonials {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 40px 20px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(4px);
+    }
+    .testimonials h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2em;
+      color: #e91e63;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+    }
+    .testimonials h2::after {
+      content: "";
+      display: block;
+      width: 80%;
+      height: 3px;
+      background-color: #e91e63;
+      margin: 10px auto 0;
+    }
+    .testimonial-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .testimonial {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+    .testimonial:hover {
+      transform: rotateX(5deg);
+    }
+    .testimonial i {
+      font-size: 2em;
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+    .testimonial p {
+      font-size: 0.95em;
+      color: #555;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    .testimonial .author {
+      font-weight: bold;
+      color: #333;
+    }
+
+    /*******************************************
+     **************** FOOTER *******************
+     *******************************************/
+    footer {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+      position: relative;
+      z-index: 10;
+    }
+    footer .contact-info {
+      margin-bottom: 20px;
+      font-size: 1em;
+      line-height: 1.8;
+    }
+    footer p {
+      font-size: 1em;
+    }
+    footer a {
+      color: #e91e63;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /*******************************************
+     ******** RESPONSIVE MEDIA QUERIES *********
+     *******************************************/
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 50vh;
+        background-attachment: scroll; /* parallax can be disabled on mobile for better performance */
+      }
+      .hero-content h1 {
+        font-size: 2em;
+      }
+      .why-shop .benefits {
+        flex-direction: column;
+        align-items: center;
+      }
+      .products {
+        flex-direction: column;
+        align-items: center;
+      }
+      .product {
+        width: 90%;
+      }
+      .testimonial-items {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP PROMO BAR -->
+  <div class="top-bar">
+    <span>EXCLUSIVE 5D EXPERIENCE - LIMITED TIME OFFERS INSIDE!</span>
+  </div>
+
+  <!-- HEADER (LOGO) -->
+  <header>
+    <img
+      src="https://i.postimg.cc/pXL9KJbh/website-logo.jpg"
+      alt="Shop Logo"
+    />
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Elevate Your Style</h1>
+      <p>Immerse yourself in a new dimension of fashion and comfort.</p>
+      <a href="https://pgaz1j-y1.myshopify.com" class="shop-button"
+        >Shop Now</a
+      >
+    </div>
+  </section>
+
+  <!-- WHY SHOP WITH US -->
+  <section class="why-shop">
+    <h2>Why Shop With Us?</h2>
+    <div class="benefits">
+      <!-- Benefit 1 -->
+      <div class="benefit-item">
+        <i class="fas fa-truck"></i>
+        <p>Fast & Reliable Shipping</p>
+      </div>
+      <!-- Benefit 2 -->
+      <div class="benefit-item">
+        <i class="fas fa-headset"></i>
+        <p>24/7 Customer Support</p>
+      </div>
+      <!-- Benefit 3 -->
+      <div class="benefit-item">
+        <i class="fas fa-redo-alt"></i>
+        <p>Easy Returns & Exchanges</p>
+      </div>
+      <!-- Benefit 4 -->
+      <div class="benefit-item">
+        <i class="fas fa-shield-alt"></i>
+        <p>Secure Payment Options</p>
+      </div>
+      <!-- Benefit 5 -->
+      <div class="benefit-item">
+        <i class="fas fa-certificate"></i>
+        <p>Quality Guaranteed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS SECTION -->
+  <div class="container">
+    <h2>Our Featured Products</h2>
+    <div class="products">
+
+      <!-- Product 1: Unisex Classic Tee -->
+      <div class="product">
+        <img
+          src="https://pgaz1j-y1.myshopify.com/cdn/shop/files/unisex-classic-tee-white-front-6777fdc6268c2_1296x.jpg?v=1735917006"
+          alt="Unisex Classic Tee"
+        />
+        <div class="discount-badge">20% OFF</div>
+        <div class="product-details">
+          <h3>Unisex Classic Tee</h3>
+          <p>A timeless white T-shirt, perfect for any occasion. 100% cotton for maximum comfort.</p>
+          <div class="original-price">R280</div>
+          <div class="price">R226</div>
+          <a href="https://pgaz1j-y1.myshopify.com" class="buy-button"
+            >Buy Now</a
+          >
+        </div>
+      </div>
+
+      <!-- Product 2: Fit Formals -->
+      <div class="product">
+        <img
+          src="https://www.bucco.us/wp-content/uploads/2020/10/Fit-Formals.jpg"
+          alt="Fit Formals"
+        />
+        <div class="discount-badge">15% OFF</div>
+        <div class="product-details">
+          <h3>Fit Formals</h3>
+          <p>Shirts for men that step out in style. Perfect for formal events and daily wear.</p>
+          <div class="original-price">R410</div>
+          <div class="price">R350</div>
+          <a href="https://pgaz1j-y1.myshopify.com" class="buy-button"
+            >Buy Now</a
+          >
+        </div>
+      </div>
+
+      <!-- Product 3: Blue Denim Jeans -->
+      <div class="product">
+        <img
+          src="https://thefoschini.vtexassets.com/arquivos/ids/173595303-1200-1600?v=638725703437070000&width=1200&height=1600&aspect=true"
+          alt="Blue Denim Jeans"
+        />
+        <div class="discount-badge">10% OFF</div>
+        <div class="product-details">
+          <h3>Blue Denim Jeans</h3>
+          <p>Comfortable and stylish denim jeans that pair well with any top. Durable and trendy.</p>
+          <div class="original-price">R444</div>
+          <div class="price">R399</div>
+          <a href="https://pgaz1j-y1.myshopify.com" class="buy-button"
+            >Buy Now</a
+          >
+        </div>
+      </div>
+
+      <!-- Product 4: R600 Hoodie -->
+      <div class="product">
+        <img
+          src="https://thefoschini.vtexassets.com/arquivos/ids/172419620-1200-1600?v=638721171722800000&width=1200&height=1600&aspect=true"
+          alt="R600 Hoodie"
+        />
+        <div class="discount-badge">25% OFF</div>
+        <div class="product-details">
+          <h3>R600 Hoodie</h3>
+          <p>Stay warm and stylish with our comfortable casual hoodie. Perfect for all seasons.</p>
+          <div class="original-price">R800</div>
+          <div class="price">R600</div>
+          <a href="https://pgaz1j-y1.myshopify.com" class="buy-button"
+            >Buy Now</a
+          >
+        </div>
+      </div>
+
+      <!-- Product 5: R150 Cup -->
+      <div class="product">
+        <img
+          src="https://pgaz1j-y1.myshopify.com/cdn/shop/files/white-glossy-mug-white-11-oz-cutting-board-6778206638a3a_1296x.jpg?v=1735925873"
+          alt="R150 Cup"
+        />
+        <div class="discount-badge">10% OFF</div>
+        <div class="product-details">
+          <h3>R150 Cup</h3>
+          <p>Enjoy your beverages with our glossy white mug. Perfect for daily use or gifting.</p>
+          <div class="original-price">R167</div>
+          <div class="price">R150</div>
+          <a href="https://pgaz1j-y1.myshopify.com" class="buy-button"
+            >Buy Now</a
+          >
+        </div>
+      </div>
+
+      <!-- Product 6: R700 Summer Short -->
+      <div class="product">
+        <img
+          src="https://thefoschini.vtexassets.com/arquivos/ids/173885528-1200-1600?v=638726162754830000&width=1200&height=1600&aspect=true"
+          alt="R700 Summer Short"
+        />
+        <div class="discount-badge">22% OFF</div>
+        <div class="product-details">
+          <h3>R700 Summer Short</h3>
+          <p>Lightweight and cool, perfect for scorching summer days. Limited stock available!</p>
+          <div class="original-price">R900</div>
+          <div class="price">R700</div>
+          <a href="https://pgaz1j-y1.myshopify.com" class="buy-button"
+            >Buy Now</a
+          >
+        </div>
+      </div>
+
+      <!-- Product 7: R110 Summer Tee -->
+      <div class="product">
+        <img
+          src="https://thefoschini.vtexassets.com/arquivos/ids/172587364-1200-1600?v=638721296194800000&width=1200&height=1600&aspect=true"
+          alt="R110 Summer Tee"
+        />
+        <div class="discount-badge">15% OFF</div>
+        <div class="product-details">
+          <h3>R110 Summer Tee</h3>
+          <p>Stay comfy in this breezy tee for everyday wear. Grab yours before it's gone!</p>
+          <div class="original-price">R130</div>
+          <div class="price">R110</div>
+          <a href="https://pgaz1j-y1.myshopify.com" class="buy-button"
+            >Buy Now</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="testimonials">
+    <h2>Our Happy Customers</h2>
+    <div class="testimonial-items">
+      <!-- Testimonial 1 -->
+      <div class="testimonial">
+        <i class="fas fa-quote-left"></i>
+        <p>
+          “Absolutely love my new hoodie! The fabric is top-notch, and shipping
+          was super fast. Highly recommend!”
+        </p>
+        <div class="author">— Sarah M.</div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="testimonial">
+        <i class="fas fa-quote-left"></i>
+        <p>
+          “The quality of the tees and jeans is amazing. I feel so comfortable
+          and confident wearing them!”
+        </p>
+        <div class="author">— Jason R.</div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="testimonial">
+        <i class="fas fa-quote-left"></i>
+        <p>
+          “Fantastic customer service and super quick response. My entire
+          family shops here now!”
+        </p>
+        <div class="author">— Monica T.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="contact-info">
+      <p><strong>Contact Us</strong></p>
+      <p>
+        Email:
+        <a href="mailto:ewaldpret6@gmail.com">ewaldpret6@gmail.com</a>
+      </p>
+      <p>
+        Phone:
+        <a href="tel:+27827983974">+27 82 798 3974</a>
+      </p>
+      <p>Location: South Africa</p>
+    </div>
+    <p>&copy; 2025 Stylish Poster Shop. All rights reserved.</p>
+  </footer>
+</body>
+</html>
